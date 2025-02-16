@@ -1,11 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://chat.deepseek.com/">
-    <title>Redirecting...</title>
+<title>Mixed DOM Changes</title>
+<style>
+  #container {
+    display: flex;
+  }
+  .box {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: lightgray;
+  }
+</style>
 </head>
 <body>
-    <p>If you are not redirected, <a href="https://chat.deepseek.com/">click here</a>.</p>
+
+<div id="container">
+  <div class="box" id="box1"></div>
+  <div class="box" id="box2"></div>
+</div>
+
+<ul id="myList"></ul>
+
+<button onclick="changeTextInline()">Change Text (Inline)</button>
+<button onclick="changeBackgroundColorInline()">Change Background (Inline)</button>
+<button onclick="addParagraphInline()">Add Paragraph (Inline)</button>
+<button onclick="changeTitleInline()">Change Title (Inline)</button>
+<button onclick="setAttributeInline()">Set Attribute (Inline)</button>
+
+
+<script>
+  // Inline JavaScript Functions
+  function changeTextInline() {
+    document.getElementById("box1").textContent = "Text changed inline!";
+  }
+
+  function changeBackgroundColorInline() {
+    document.getElementById("box2").style.backgroundColor = "lightgreen";
+  }
+
+  function addParagraphInline() {
+    const newParagraph = document.createElement("p");
+    newParagraph.textContent = "Paragraph added inline.";
+    document.body.appendChild(newParagraph);
+  }
+
+  function changeTitleInline() {
+    document.title = "Title Changed Inline!";
+  }
+
+  function setAttributeInline() {
+    document.getElementById("box1").setAttribute("data-info", "Inline Data");
+  }
+
+
+</script>
+
+<script src="script1.js"></script>
+<script src="script2.js"></script>
+<script src="script3.js"></script>
+<script src="script4.js"></script>
+<script src="script5.js"></script>
+
 </body>
 </html>
