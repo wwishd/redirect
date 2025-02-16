@@ -1,0 +1,1 @@
+document.getElementById("box2").style.border = "2px solid blue";
